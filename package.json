@@ -1,9 +1,9 @@
 {
-    "name": "nextjs-admin-template",
+    "name": "smokinbsbbqdashboard",
     "private": true,
-    "description": "Admin dashboard template based on nextjs with @paljs/ui component package",
+    "description": "Admin Dashboard for SmokinBsBBQ",
     "version": "0.1.0",
-    "author": "Ahmed Elywa",
+    "author": "XiBakon",
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "29.2.0",
         "@ckeditor/ckeditor5-react": "3.0.2",
@@ -35,13 +35,6 @@
         "dev": "next",
         "build": "next build",
         "start": "next start --port ${PORT-3000}"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/paljs/nextjs-admin-template"
-    },
-    "bugs": {
-        "url": "https://github.com/paljs/nextjs-admin-template/issues"
     },
     "devDependencies": {
         "@types/node": "16.7.10",
