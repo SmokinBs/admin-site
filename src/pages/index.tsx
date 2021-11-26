@@ -1,11 +1,24 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Layout from "Layouts";
+import Link from "next/link";
+import React from "react";
+import { signIn } from "next-auth/client";
 
-export default function Index() {
-  const router = useRouter();
-  useEffect(() => {
-    router.push('/extra-components/accordion');
-  }),
-    [];
-  return <div />;
-}
+const Home = () => {
+    return (
+        <Layout title="Home">
+            <>
+                <h1>Hello Please sign in!</h1>
+                <Link href="/api/auth/signin/google">
+                    <a
+                        onClick={() => {
+                            signIn("google");
+                        }}
+                    >
+                        Sign In
+                    </a>
+                </Link>
+            </>
+        </Layout>
+    );
+};
+export default Home;
