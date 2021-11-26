@@ -1,23 +1,22 @@
 import Layout from "Layouts";
-import Link from "next/link";
 import React from "react";
-import { signIn } from "next-auth/client";
+import { useUser } from "@auth0/nextjs-auth0";
 
 const Home = () => {
+    const { user, error, isLoading } = useUser();
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error.message}</div>;
+
     return (
         <Layout title="Home">
-            <>
-                <h1>Hello Please sign in!</h1>
-                <Link href="/api/auth/signin/google">
-                    <a
-                        onClick={() => {
-                            signIn("google");
-                        }}
-                    >
-                        Sign In
-                    </a>
-                </Link>
-            </>
+            {user ? (
+                <div>
+                    Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
+                </div>
+            ) : (
+                <a href="/api/auth/login">Login</a>
+            )}
         </Layout>
     );
 };

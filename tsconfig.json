@@ -25,6 +25,7 @@
     },
     "exclude": ["node_modules"],
     "include": [
+        "src/pages/api/auth/[...auth0].js",
         "src/components/checkAuthStatus.js",
         "src/components/checkAuthStatus.jsx",
         "src/Layouts/Header.jsx",
